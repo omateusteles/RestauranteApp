@@ -178,18 +178,18 @@ namespace RestauranteApp.View
 
         private void btn_remover_refeicao_produto_Click(object sender, EventArgs e)
         {
-            int Cd_Refeicao_Produto;
+            int Cd_Refeicao_Produto, Cd_Refeicao;
             Refeicao_ProdutoController refeicao_produtoController = new Refeicao_ProdutoController();
             Refeicao_ProdutoDAO refeicao_produtoDAO = new Refeicao_ProdutoDAO();
 
             Cd_Refeicao_Produto = !string.IsNullOrEmpty(dataGridView2.CurrentRow.Cells[0].Value.ToString()) ? Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString()) : 0;
-
+            Cd_Refeicao = !string.IsNullOrEmpty(dataGridView1.CurrentRow.Cells[0].Value.ToString()) ? Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()) : 0;
             try
             {
                 refeicao_produtoController.Remover(Cd_Refeicao_Produto);
 
                 // atualizando o Grid com as alterações
-                dataGridView2.DataSource = refeicao_produtoDAO.BuscarTodosPai(Cd_Refeicao_Produto);
+                dataGridView2.DataSource = refeicao_produtoDAO.BuscarTodosPai(Cd_Refeicao);
             }
             catch (Exception ex)
             {

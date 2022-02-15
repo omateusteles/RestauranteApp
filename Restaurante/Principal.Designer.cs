@@ -37,6 +37,7 @@ namespace RestauranteApp
             this.cadastroDeMesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +97,8 @@ namespace RestauranteApp
             // vendasToolStripMenuItem
             // 
             this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrosToolStripMenuItem1});
+            this.cadastrosToolStripMenuItem1,
+            this.contasToolStripMenuItem});
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.vendasToolStripMenuItem.Text = "Vendas";
@@ -107,6 +109,13 @@ namespace RestauranteApp
             this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.cadastrosToolStripMenuItem1.Text = "Pedidos";
             this.cadastrosToolStripMenuItem1.Click += new System.EventHandler(this.cadastrosToolStripMenuItem1_Click);
+            // 
+            // contasToolStripMenuItem
+            // 
+            this.contasToolStripMenuItem.Name = "contasToolStripMenuItem";
+            this.contasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.contasToolStripMenuItem.Text = "Contas";
+            this.contasToolStripMenuItem.Click += new System.EventHandler(this.contasToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -137,6 +146,7 @@ namespace RestauranteApp
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem cadastroRefeicaoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeMesaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contasToolStripMenuItem;
     }
 }
 

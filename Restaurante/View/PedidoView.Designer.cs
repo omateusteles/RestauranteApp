@@ -29,17 +29,14 @@ namespace RestauranteApp.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gb_pedido = new System.Windows.Forms.GroupBox();
             this.cb_mesa = new System.Windows.Forms.ComboBox();
             this.btn_remover = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.CD_PEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FK_CD_MESA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_HORA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_cd_pedido = new System.Windows.Forms.TextBox();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_salvar = new System.Windows.Forms.Button();
@@ -50,6 +47,11 @@ namespace RestauranteApp.View
             this.lbl_cd_pedido = new System.Windows.Forms.Label();
             this.gb_pedido_refeicao = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.cd_pedido_refeicao1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FK_CD_REFEICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FK_CD_PEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txt_preco = new System.Windows.Forms.TextBox();
             this.lbl_preco = new System.Windows.Forms.Label();
             this.lbl_quantidade = new System.Windows.Forms.Label();
@@ -63,11 +65,9 @@ namespace RestauranteApp.View
             this.lbl_cd_refeicao = new System.Windows.Forms.Label();
             this.txt_cd_refeicao = new System.Windows.Forms.TextBox();
             this.lbl_cd_pedido_refeicao = new System.Windows.Forms.Label();
-            this.cd_pedido_refeicao1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FK_CD_REFEICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PRECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FK_CD_PEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CD_PEDIDO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FK_CD_MESA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_HORA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gb_pedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.gb_pedido_refeicao.SuspendLayout();
@@ -140,40 +140,6 @@ namespace RestauranteApp.View
             this.dataGridView1.Size = new System.Drawing.Size(367, 191);
             this.dataGridView1.TabIndex = 33;
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // CD_PEDIDO
-            // 
-            this.CD_PEDIDO.DataPropertyName = "CD_PEDIDO";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CD_PEDIDO.DefaultCellStyle = dataGridViewCellStyle4;
-            this.CD_PEDIDO.HeaderText = "Código";
-            this.CD_PEDIDO.MinimumWidth = 6;
-            this.CD_PEDIDO.Name = "CD_PEDIDO";
-            this.CD_PEDIDO.ReadOnly = true;
-            this.CD_PEDIDO.Width = 50;
-            // 
-            // FK_CD_MESA
-            // 
-            this.FK_CD_MESA.DataPropertyName = "FK_CD_MESA";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.FK_CD_MESA.DefaultCellStyle = dataGridViewCellStyle5;
-            this.FK_CD_MESA.HeaderText = "Mesa";
-            this.FK_CD_MESA.MinimumWidth = 6;
-            this.FK_CD_MESA.Name = "FK_CD_MESA";
-            this.FK_CD_MESA.ReadOnly = true;
-            this.FK_CD_MESA.Width = 50;
-            // 
-            // DATA_HORA
-            // 
-            this.DATA_HORA.DataPropertyName = "DATA_HORA";
-            dataGridViewCellStyle6.Format = "G";
-            dataGridViewCellStyle6.NullValue = null;
-            this.DATA_HORA.DefaultCellStyle = dataGridViewCellStyle6;
-            this.DATA_HORA.HeaderText = "Data";
-            this.DATA_HORA.MinimumWidth = 6;
-            this.DATA_HORA.Name = "DATA_HORA";
-            this.DATA_HORA.ReadOnly = true;
-            this.DATA_HORA.Width = 125;
             // 
             // txt_cd_pedido
             // 
@@ -290,6 +256,52 @@ namespace RestauranteApp.View
             this.dataGridView2.RowTemplate.Height = 25;
             this.dataGridView2.Size = new System.Drawing.Size(367, 195);
             this.dataGridView2.TabIndex = 40;
+            // 
+            // cd_pedido_refeicao1
+            // 
+            this.cd_pedido_refeicao1.DataPropertyName = "cd_pedido_refeicao";
+            this.cd_pedido_refeicao1.HeaderText = "Código";
+            this.cd_pedido_refeicao1.MinimumWidth = 6;
+            this.cd_pedido_refeicao1.Name = "cd_pedido_refeicao1";
+            this.cd_pedido_refeicao1.ReadOnly = true;
+            this.cd_pedido_refeicao1.Width = 60;
+            // 
+            // FK_CD_REFEICAO
+            // 
+            this.FK_CD_REFEICAO.DataPropertyName = "FK_CD_REFEICAO";
+            this.FK_CD_REFEICAO.HeaderText = "Refeição";
+            this.FK_CD_REFEICAO.MinimumWidth = 6;
+            this.FK_CD_REFEICAO.Name = "FK_CD_REFEICAO";
+            this.FK_CD_REFEICAO.ReadOnly = true;
+            this.FK_CD_REFEICAO.Width = 60;
+            // 
+            // QUANTIDADE
+            // 
+            this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
+            this.QUANTIDADE.HeaderText = "Quantidade";
+            this.QUANTIDADE.MinimumWidth = 6;
+            this.QUANTIDADE.Name = "QUANTIDADE";
+            this.QUANTIDADE.ReadOnly = true;
+            this.QUANTIDADE.Width = 70;
+            // 
+            // PRECO
+            // 
+            this.PRECO.DataPropertyName = "PRECO";
+            this.PRECO.HeaderText = "Preço";
+            this.PRECO.MinimumWidth = 6;
+            this.PRECO.Name = "PRECO";
+            this.PRECO.ReadOnly = true;
+            this.PRECO.Width = 60;
+            // 
+            // FK_CD_PEDIDO
+            // 
+            this.FK_CD_PEDIDO.DataPropertyName = "FK_CD_PEDIDO";
+            this.FK_CD_PEDIDO.HeaderText = "FK_CD_PEDIDO";
+            this.FK_CD_PEDIDO.MinimumWidth = 6;
+            this.FK_CD_PEDIDO.Name = "FK_CD_PEDIDO";
+            this.FK_CD_PEDIDO.ReadOnly = true;
+            this.FK_CD_PEDIDO.Visible = false;
+            this.FK_CD_PEDIDO.Width = 125;
             // 
             // txt_preco
             // 
@@ -411,51 +423,39 @@ namespace RestauranteApp.View
             this.lbl_cd_pedido_refeicao.TabIndex = 24;
             this.lbl_cd_pedido_refeicao.Text = "Código*:";
             // 
-            // cd_pedido_refeicao1
+            // CD_PEDIDO
             // 
-            this.cd_pedido_refeicao1.DataPropertyName = "cd_pedido_refeicao";
-            this.cd_pedido_refeicao1.HeaderText = "Código";
-            this.cd_pedido_refeicao1.MinimumWidth = 6;
-            this.cd_pedido_refeicao1.Name = "cd_pedido_refeicao1";
-            this.cd_pedido_refeicao1.ReadOnly = true;
-            this.cd_pedido_refeicao1.Width = 60;
+            this.CD_PEDIDO.DataPropertyName = "CD_PEDIDO";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CD_PEDIDO.DefaultCellStyle = dataGridViewCellStyle1;
+            this.CD_PEDIDO.HeaderText = "Código";
+            this.CD_PEDIDO.MinimumWidth = 6;
+            this.CD_PEDIDO.Name = "CD_PEDIDO";
+            this.CD_PEDIDO.ReadOnly = true;
+            this.CD_PEDIDO.Width = 50;
             // 
-            // FK_CD_REFEICAO
+            // FK_CD_MESA
             // 
-            this.FK_CD_REFEICAO.DataPropertyName = "FK_CD_REFEICAO";
-            this.FK_CD_REFEICAO.HeaderText = "Refeição";
-            this.FK_CD_REFEICAO.MinimumWidth = 6;
-            this.FK_CD_REFEICAO.Name = "FK_CD_REFEICAO";
-            this.FK_CD_REFEICAO.ReadOnly = true;
-            this.FK_CD_REFEICAO.Width = 60;
+            this.FK_CD_MESA.DataPropertyName = "FK_CD_MESA";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.FK_CD_MESA.DefaultCellStyle = dataGridViewCellStyle2;
+            this.FK_CD_MESA.HeaderText = "Mesa";
+            this.FK_CD_MESA.MinimumWidth = 6;
+            this.FK_CD_MESA.Name = "FK_CD_MESA";
+            this.FK_CD_MESA.ReadOnly = true;
+            this.FK_CD_MESA.Width = 50;
             // 
-            // QUANTIDADE
+            // DATA_HORA
             // 
-            this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
-            this.QUANTIDADE.HeaderText = "Quantidade";
-            this.QUANTIDADE.MinimumWidth = 6;
-            this.QUANTIDADE.Name = "QUANTIDADE";
-            this.QUANTIDADE.ReadOnly = true;
-            this.QUANTIDADE.Width = 70;
-            // 
-            // PRECO
-            // 
-            this.PRECO.DataPropertyName = "PRECO";
-            this.PRECO.HeaderText = "Preço";
-            this.PRECO.MinimumWidth = 6;
-            this.PRECO.Name = "PRECO";
-            this.PRECO.ReadOnly = true;
-            this.PRECO.Width = 60;
-            // 
-            // FK_CD_PEDIDO
-            // 
-            this.FK_CD_PEDIDO.DataPropertyName = "FK_CD_PEDIDO";
-            this.FK_CD_PEDIDO.HeaderText = "FK_CD_PEDIDO";
-            this.FK_CD_PEDIDO.MinimumWidth = 6;
-            this.FK_CD_PEDIDO.Name = "FK_CD_PEDIDO";
-            this.FK_CD_PEDIDO.ReadOnly = true;
-            this.FK_CD_PEDIDO.Visible = false;
-            this.FK_CD_PEDIDO.Width = 125;
+            this.DATA_HORA.DataPropertyName = "DATA_HORA";
+            dataGridViewCellStyle3.Format = "G";
+            dataGridViewCellStyle3.NullValue = null;
+            this.DATA_HORA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DATA_HORA.HeaderText = "Data";
+            this.DATA_HORA.MinimumWidth = 6;
+            this.DATA_HORA.Name = "DATA_HORA";
+            this.DATA_HORA.ReadOnly = true;
+            this.DATA_HORA.Width = 120;
             // 
             // PedidoView
             // 
@@ -511,9 +511,6 @@ namespace RestauranteApp.View
         private System.Windows.Forms.Label lbl_quantidade;
         private System.Windows.Forms.TextBox txt_quantidade;
         private System.Windows.Forms.ComboBox cb_mesa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CD_PEDIDO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FK_CD_MESA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_HORA;
         private System.Windows.Forms.TextBox txt_preco;
         private System.Windows.Forms.Label lbl_preco;
         private System.Windows.Forms.DataGridViewTextBoxColumn CD_pedido_refeicao;
@@ -523,5 +520,8 @@ namespace RestauranteApp.View
         private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECO;
         private System.Windows.Forms.DataGridViewTextBoxColumn FK_CD_PEDIDO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CD_PEDIDO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FK_CD_MESA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DATA_HORA;
     }
 }

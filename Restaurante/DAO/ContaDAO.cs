@@ -57,7 +57,10 @@ namespace Restaurante.DAO
                 dr.Read();
                 conta.Fk_Cd_Mesa = (int)dr["CD_MESA"];
                 conta.Cd_Conta = (int)dr["CD_CONTA"];
-                conta.Data_Hora_Fechamento = (DateTime)dr["DATA_HORA_FECHAMENTO"];
+
+                if (!string.IsNullOrEmpty(Convert.ToString(dr["DATA_HORA_FECHAMENTO"])))
+                    conta.Data_Hora_Fechamento = (DateTime)dr["DATA_HORA_FECHAMENTO"];
+
                 conta.Data_Hora_Abertura = (DateTime)dr["DATA_HORA_ABERTURA"];
             }
             else
@@ -85,7 +88,10 @@ namespace Restaurante.DAO
 
                     conta.Fk_Cd_Mesa = (int)dr["CD_MESA"];
                     conta.Cd_Conta = (int)dr["CD_CONTA"];
-                    conta.Data_Hora_Fechamento = (DateTime)dr["DATA_HORA_FECHAMENTO"];
+
+                    if (!string.IsNullOrEmpty(Convert.ToString(dr["DATA_HORA_FECHAMENTO"])))
+                        conta.Data_Hora_Fechamento = (DateTime?)dr["DATA_HORA_FECHAMENTO"];
+
                     conta.Data_Hora_Abertura = (DateTime)dr["DATA_HORA_ABERTURA"];
 
                     contas.Add(conta);

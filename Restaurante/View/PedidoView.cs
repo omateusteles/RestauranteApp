@@ -191,18 +191,18 @@ namespace RestauranteApp.View
 
         private void btn_remover_pedido_refeicao_Click(object sender, EventArgs e)
         {
-            int Cd_pedido_refeicao;
+            int Cd_pedido_refeicao, Cd_pedido;
             Pedido_RefeicaoController pedido_refeicaoController = new Pedido_RefeicaoController();
             Pedido_RefeicaoDAO pedido_refeicaoDAO = new Pedido_RefeicaoDAO();
 
             Cd_pedido_refeicao = !string.IsNullOrEmpty(dataGridView2.CurrentRow.Cells[0].Value.ToString()) ? Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value.ToString()) : 0;
-
+            Cd_pedido = !string.IsNullOrEmpty(dataGridView1.CurrentRow.Cells[0].Value.ToString()) ? Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()) : 0;
             try
             {
                 pedido_refeicaoController.Remover(Cd_pedido_refeicao);
 
                 // atualizando o Grid com as alterações
-                dataGridView2.DataSource = pedido_refeicaoDAO.BuscarTodosPai(Cd_pedido_refeicao);
+                dataGridView2.DataSource = pedido_refeicaoDAO.BuscarTodosPai(Cd_pedido);
             }
             catch (Exception ex)
             {
@@ -228,7 +228,7 @@ namespace RestauranteApp.View
                 pedido_refeicaoController.Gravar(pedido_refeicao);
 
                 // atualizando o Grid com as alterações
-                dataGridView2.DataSource = pedido_refeicaoDAO.BuscarTodosPai(pedido_refeicao.Fk_Cd_Refeicao);
+                dataGridView2.DataSource = pedido_refeicaoDAO.BuscarTodosPai(pedido_refeicao.Fk_Cd_Pedido);
 
                 // voltando os formularios para o estado inicial
                 btn_cancelar_pedido_refeicao_Click(sender, e);

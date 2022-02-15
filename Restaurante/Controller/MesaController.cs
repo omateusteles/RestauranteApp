@@ -12,6 +12,7 @@ namespace Restaurante.Controller
         {
             MesaDAO mesaDAO = new MesaDAO();
 
+            // validando regras de negócio
             if (string.IsNullOrEmpty(mesa.Localizacao))
                 throw new Exception("A Localização precisa estar preenchida");
 

@@ -82,5 +82,22 @@ namespace RestauranteApp
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void contasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ContaView frmConta = new ContaView();
+
+                // adicionando form ao panel
+                frmConta.TopLevel = false;
+                panel.Controls.Add(frmConta);
+                frmConta.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
