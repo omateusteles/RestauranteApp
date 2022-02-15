@@ -11,8 +11,8 @@ namespace RestauranteApp
             InitializeComponent();
 
             // aumentando tamanho do Panel para ocupar a tela inteira
-            //panel.Height = Screen.PrimaryScreen.Bounds.Height;
-            //panel.Width = Screen.PrimaryScreen.Bounds.Width;
+            panel.Height = Screen.PrimaryScreen.Bounds.Height;
+            panel.Width = Screen.PrimaryScreen.Bounds.Width;
         }
 
         private void produtoToolStripMenuItem1_Click(object sender, EventArgs e)

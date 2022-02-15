@@ -29,10 +29,10 @@ namespace RestauranteApp.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_cd_produto = new System.Windows.Forms.Label();
             this.lbl_descricao = new System.Windows.Forms.Label();
             this.txt_descricao = new System.Windows.Forms.TextBox();
@@ -53,6 +53,8 @@ namespace RestauranteApp.View
             this.ESTOQUE_MINIMO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTOQUE_ATUAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECO_CUSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_remover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -194,8 +196,8 @@ namespace RestauranteApp.View
             // CD_PRODUTO
             // 
             this.CD_PRODUTO.DataPropertyName = "CD_PRODUTO";
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CD_PRODUTO.DefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CD_PRODUTO.DefaultCellStyle = dataGridViewCellStyle9;
             this.CD_PRODUTO.HeaderText = "Código";
             this.CD_PRODUTO.MinimumWidth = 6;
             this.CD_PRODUTO.Name = "CD_PRODUTO";
@@ -214,9 +216,9 @@ namespace RestauranteApp.View
             // ESTOQUE_MINIMO
             // 
             this.ESTOQUE_MINIMO.DataPropertyName = "ESTOQUE_MINIMO";
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle26.Format = "N2";
-            this.ESTOQUE_MINIMO.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N2";
+            this.ESTOQUE_MINIMO.DefaultCellStyle = dataGridViewCellStyle10;
             this.ESTOQUE_MINIMO.HeaderText = "Estoque Mínimo";
             this.ESTOQUE_MINIMO.MinimumWidth = 6;
             this.ESTOQUE_MINIMO.Name = "ESTOQUE_MINIMO";
@@ -226,9 +228,9 @@ namespace RestauranteApp.View
             // ESTOQUE_ATUAL
             // 
             this.ESTOQUE_ATUAL.DataPropertyName = "ESTOQUE_ATUAL";
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle27.Format = "N2";
-            this.ESTOQUE_ATUAL.DefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N2";
+            this.ESTOQUE_ATUAL.DefaultCellStyle = dataGridViewCellStyle11;
             this.ESTOQUE_ATUAL.HeaderText = "Estoque Atual";
             this.ESTOQUE_ATUAL.MinimumWidth = 6;
             this.ESTOQUE_ATUAL.Name = "ESTOQUE_ATUAL";
@@ -238,14 +240,34 @@ namespace RestauranteApp.View
             // PRECO_CUSTO
             // 
             this.PRECO_CUSTO.DataPropertyName = "PRECO_CUSTO";
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle28.Format = "N2";
-            this.PRECO_CUSTO.DefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N2";
+            this.PRECO_CUSTO.DefaultCellStyle = dataGridViewCellStyle12;
             this.PRECO_CUSTO.HeaderText = "Preço de Custo";
             this.PRECO_CUSTO.MinimumWidth = 6;
             this.PRECO_CUSTO.Name = "PRECO_CUSTO";
             this.PRECO_CUSTO.ReadOnly = true;
             this.PRECO_CUSTO.Width = 150;
+            // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(209, 400);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(86, 32);
+            this.btn_editar.TabIndex = 18;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // btn_remover
+            // 
+            this.btn_remover.Location = new System.Drawing.Point(553, 400);
+            this.btn_remover.Name = "btn_remover";
+            this.btn_remover.Size = new System.Drawing.Size(86, 32);
+            this.btn_remover.TabIndex = 19;
+            this.btn_remover.Text = "Remover";
+            this.btn_remover.UseVisualStyleBackColor = true;
+            this.btn_remover.Click += new System.EventHandler(this.btn_remover_Click);
             // 
             // ProdutoView
             // 
@@ -253,6 +275,8 @@ namespace RestauranteApp.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(875, 444);
+            this.Controls.Add(this.btn_remover);
+            this.Controls.Add(this.btn_editar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_cd_produto);
             this.Controls.Add(this.btn_cancelar);
@@ -304,5 +328,7 @@ namespace RestauranteApp.View
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_MINIMO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_ATUAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECO_CUSTO;
+        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_remover;
     }
 }

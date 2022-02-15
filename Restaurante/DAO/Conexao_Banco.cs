@@ -25,20 +25,34 @@ namespace Restaurante.DAO
 
         public static void CRUD(SqlCommand comando)
         {
-            SqlConnection con = Conectar();
-            comando.Connection = con;
-            comando.ExecuteNonQuery();
-            con.Close();
+            try
+            {
+                SqlConnection con = Conectar();
+                comando.Connection = con;
+                comando.ExecuteNonQuery();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
         public static SqlDataReader Selecionar(SqlCommand comando)
         {
-
-            SqlConnection con = Conectar();
-            comando.Connection = con;
-            SqlDataReader dr = comando.ExecuteReader(CommandBehavior.CloseConnection);
-            return dr;
-
+            try
+            {
+                SqlConnection con = Conectar();
+                comando.Connection = con;
+                SqlDataReader dr = comando.ExecuteReader(CommandBehavior.CloseConnection);
+                return dr;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
         }
     }
 }

@@ -58,7 +58,7 @@ namespace Restaurante.DAO
                 caixa_conta.Cd_Caixa_Conta = (int)dr["CD_CAIXA_CONTA"];
                 caixa_conta.Cd_Caixa = (int)dr["CD_CAIXA"];
                 caixa_conta.Cd_Conta = (int)dr["CD_CONTA"];
-                caixa_conta.Valor_Pagamento = (int)dr["VALOR_PAGAMENTO"];
+                caixa_conta.Valor_Pagamento = (decimal)dr["VALOR_PAGAMENTO"];
                 caixa_conta.Descricao_Pagamento = (string)dr["DESCRICAO_PAGAMENTO"]; 
                 caixa_conta.Data_Hora_Pagamento = (DateTime)dr["DATA_HORA_PAGAMENTO"];
             }
@@ -88,7 +88,7 @@ namespace Restaurante.DAO
                     caixa_conta.Cd_Caixa_Conta = (int)dr["CD_CAIXA_CONTA"];
                     caixa_conta.Cd_Caixa = (int)dr["CD_CAIXA"];
                     caixa_conta.Cd_Conta = (int)dr["CD_CONTA"];
-                    caixa_conta.Valor_Pagamento = (int)dr["VALOR_PAGAMENTO"];
+                    caixa_conta.Valor_Pagamento = (decimal)dr["VALOR_PAGAMENTO"];
                     caixa_conta.Descricao_Pagamento = (string)dr["DESCRICAO_PAGAMENTO"];
                     caixa_conta.Data_Hora_Pagamento = (DateTime)dr["DATA_HORA_PAGAMENTO"];
 

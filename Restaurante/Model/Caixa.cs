@@ -9,6 +9,6 @@ namespace Restaurante.Model
     public class Caixa
     {
         public int Cd_Caixa { get; set; }
-        public int Valor_Atual { get; set; }
+        public decimal Valor_Atual { get; set; }
     }
 }

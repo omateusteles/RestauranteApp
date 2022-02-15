@@ -29,6 +29,7 @@ namespace Restaurante.DAO
 
             Conexao_Banco.CRUD(comando);
         }
+
         public void Update(Produto produto)
         {
             SqlCommand comando = new SqlCommand();
@@ -42,6 +43,7 @@ namespace Restaurante.DAO
 
             Conexao_Banco.CRUD(comando);
         }
+
         public Produto BuscarPorId(int Cd_Produto)
         {
             SqlCommand comando = new SqlCommand();
@@ -67,6 +69,7 @@ namespace Restaurante.DAO
             }
             return produto;
         }
+
         public IList<Produto> BuscarTodos()
         {
             SqlCommand comando = new SqlCommand();

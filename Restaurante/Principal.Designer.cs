@@ -31,9 +31,8 @@ namespace RestauranteApp
         {
             this.panel = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastrosToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.produtoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroProdutoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -55,7 +54,7 @@ namespace RestauranteApp
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.comprasToolStripMenuItem,
+            this.cadastrosToolStripMenuItem,
             this.vendasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -64,28 +63,20 @@ namespace RestauranteApp
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // comprasToolStripMenuItem
+            // cadastrosToolStripMenuItem
             // 
-            this.comprasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastrosToolStripMenuItem2});
-            this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            this.comprasToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
-            this.comprasToolStripMenuItem.Text = "Compras";
+            this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cadastroProdutoToolStripMenuItem2});
+            this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
+            this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
-            // cadastrosToolStripMenuItem2
+            // cadastroProdutoToolStripMenuItem2
             // 
-            this.cadastrosToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.produtoToolStripMenuItem1});
-            this.cadastrosToolStripMenuItem2.Name = "cadastrosToolStripMenuItem2";
-            this.cadastrosToolStripMenuItem2.Size = new System.Drawing.Size(224, 26);
-            this.cadastrosToolStripMenuItem2.Text = "Cadastros";
-            // 
-            // produtoToolStripMenuItem1
-            // 
-            this.produtoToolStripMenuItem1.Name = "produtoToolStripMenuItem1";
-            this.produtoToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
-            this.produtoToolStripMenuItem1.Text = "Produto";
-            this.produtoToolStripMenuItem1.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
+            this.cadastroProdutoToolStripMenuItem2.Name = "cadastroProdutoToolStripMenuItem2";
+            this.cadastroProdutoToolStripMenuItem2.Size = new System.Drawing.Size(229, 26);
+            this.cadastroProdutoToolStripMenuItem2.Text = "Cadastro de Produto";
+            this.cadastroProdutoToolStripMenuItem2.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
             // vendasToolStripMenuItem
             // 
@@ -147,10 +138,9 @@ namespace RestauranteApp
 
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem comprasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem produtoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem cadastroProdutoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem novoClienteToolStripMenuItem;

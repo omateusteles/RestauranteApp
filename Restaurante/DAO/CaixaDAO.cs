@@ -55,7 +55,7 @@ namespace Restaurante.DAO
             {
                 dr.Read();
                 caixa.Cd_Caixa = (int)dr["CD_CAIXA"];
-                caixa.Valor_Atual = (int)dr["VALOR_ATUAL"];
+                caixa.Valor_Atual = (decimal)dr["VALOR_ATUAL"];
             }
             else
             {
@@ -81,7 +81,7 @@ namespace Restaurante.DAO
                     Caixa caixa = new Caixa ();
 
                     caixa.Cd_Caixa = (int)dr["CD_CAIXA"];
-                    caixa.Valor_Atual = (int)dr["VALOR_ATUAL"];
+                    caixa.Valor_Atual = (decimal)dr["VALOR_ATUAL"];
 
                     caixas.Add(caixa);
                 }

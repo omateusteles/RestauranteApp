@@ -12,7 +12,7 @@ namespace Restaurante.Model
         public int Cd_Caixa { get; set; }
         public int Cd_Conta { get; set; }
         public string Descricao_Pagamento { get; set; }
-        public int Valor_Pagamento { get; set; }
+        public decimal Valor_Pagamento { get; set; }
         public DateTime Data_Hora_Pagamento { get; set; }
     }
 }
