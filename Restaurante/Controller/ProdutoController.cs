@@ -2,6 +2,7 @@
 using Restaurante.Model;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace Restaurante.Controller
 {
@@ -35,9 +36,13 @@ namespace Restaurante.Controller
         {
             ProdutoDAO produtoDAO = new ProdutoDAO();
             
+            // verificando se existe registro a ser removido
             if (Cd_Produto != 0)
             {
-                produtoDAO.Delete(Cd_Produto);
+                if (MessageBox.Show($"Tem certeza que desja excluir o registro {Cd_Produto}?", "Exclusão", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    produtoDAO.Delete(Cd_Produto);
+                }
             }
         }
     }

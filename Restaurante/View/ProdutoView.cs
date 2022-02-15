@@ -74,6 +74,9 @@ namespace RestauranteApp.View
 
                 // atualizando o Grid com as alterações
                 dataGridView1.DataSource = produtoDAO.BuscarTodos();
+
+                // voltando os formularios para o estado inicial
+                btn_cancelar_Click(sender, e);
             }
             catch (Exception ex)
             {

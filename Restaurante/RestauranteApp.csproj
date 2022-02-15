@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\RefeicaoController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="DAO\Conexao_Banco.cs" />
     <Compile Include="Model\Caixa.cs" />
@@ -107,6 +108,12 @@
     <Compile Include="View\AlteracaoProduto.Designer.cs">
       <DependentUpon>AlteracaoProduto.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\RefeicaoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\RefeicaoView.Designer.cs">
+      <DependentUpon>RefeicaoView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ProdutoView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="View\AlteracaoProduto.resx">
       <DependentUpon>AlteracaoProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\RefeicaoView.resx">
+      <DependentUpon>RefeicaoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProdutoView.resx">
       <DependentUpon>ProdutoView.cs</DependentUpon>

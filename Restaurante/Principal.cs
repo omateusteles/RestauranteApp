@@ -31,5 +31,22 @@ namespace RestauranteApp
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void cadastroRefeicaoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RefeicaoView frmRefeicao = new RefeicaoView();
+
+                // adicionando form ao panel
+                frmRefeicao.TopLevel = false;
+                panel.Controls.Add(frmRefeicao);
+                frmRefeicao.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

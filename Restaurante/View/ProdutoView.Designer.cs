@@ -29,10 +29,10 @@ namespace RestauranteApp.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_cd_produto = new System.Windows.Forms.Label();
             this.lbl_descricao = new System.Windows.Forms.Label();
             this.txt_descricao = new System.Windows.Forms.TextBox();
@@ -46,7 +46,6 @@ namespace RestauranteApp.View
             this.btn_salvar = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.txt_cd_produto = new System.Windows.Forms.TextBox();
-            this.entityConnection1 = new System.Data.Entity.Core.EntityClient.EntityConnection();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CD_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -196,8 +195,8 @@ namespace RestauranteApp.View
             // CD_PRODUTO
             // 
             this.CD_PRODUTO.DataPropertyName = "CD_PRODUTO";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CD_PRODUTO.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CD_PRODUTO.DefaultCellStyle = dataGridViewCellStyle1;
             this.CD_PRODUTO.HeaderText = "Código";
             this.CD_PRODUTO.MinimumWidth = 6;
             this.CD_PRODUTO.Name = "CD_PRODUTO";
@@ -216,9 +215,9 @@ namespace RestauranteApp.View
             // ESTOQUE_MINIMO
             // 
             this.ESTOQUE_MINIMO.DataPropertyName = "ESTOQUE_MINIMO";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N2";
-            this.ESTOQUE_MINIMO.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "N2";
+            this.ESTOQUE_MINIMO.DefaultCellStyle = dataGridViewCellStyle2;
             this.ESTOQUE_MINIMO.HeaderText = "Estoque Mínimo";
             this.ESTOQUE_MINIMO.MinimumWidth = 6;
             this.ESTOQUE_MINIMO.Name = "ESTOQUE_MINIMO";
@@ -228,9 +227,9 @@ namespace RestauranteApp.View
             // ESTOQUE_ATUAL
             // 
             this.ESTOQUE_ATUAL.DataPropertyName = "ESTOQUE_ATUAL";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N2";
-            this.ESTOQUE_ATUAL.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "N2";
+            this.ESTOQUE_ATUAL.DefaultCellStyle = dataGridViewCellStyle3;
             this.ESTOQUE_ATUAL.HeaderText = "Estoque Atual";
             this.ESTOQUE_ATUAL.MinimumWidth = 6;
             this.ESTOQUE_ATUAL.Name = "ESTOQUE_ATUAL";
@@ -240,9 +239,9 @@ namespace RestauranteApp.View
             // PRECO_CUSTO
             // 
             this.PRECO_CUSTO.DataPropertyName = "PRECO_CUSTO";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N2";
-            this.PRECO_CUSTO.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N2";
+            this.PRECO_CUSTO.DefaultCellStyle = dataGridViewCellStyle4;
             this.PRECO_CUSTO.HeaderText = "Preço de Custo";
             this.PRECO_CUSTO.MinimumWidth = 6;
             this.PRECO_CUSTO.Name = "PRECO_CUSTO";
@@ -316,7 +315,6 @@ namespace RestauranteApp.View
         private System.Windows.Forms.Button btn_salvar;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.TextBox txt_cd_produto;
-        private System.Data.Entity.Core.EntityClient.EntityConnection entityConnection1;
         private System.Windows.Forms.DataGridViewTextBoxColumn cDPRODUTODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dESCRICAODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn pRECOCUSTODataGridViewTextBoxColumn;

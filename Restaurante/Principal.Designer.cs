@@ -38,6 +38,7 @@ namespace RestauranteApp
             this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.novoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alterarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroRefeicaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,7 +67,8 @@ namespace RestauranteApp
             // cadastrosToolStripMenuItem
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cadastroProdutoToolStripMenuItem2});
+            this.cadastroProdutoToolStripMenuItem2,
+            this.cadastroRefeicaoToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -74,7 +76,7 @@ namespace RestauranteApp
             // cadastroProdutoToolStripMenuItem2
             // 
             this.cadastroProdutoToolStripMenuItem2.Name = "cadastroProdutoToolStripMenuItem2";
-            this.cadastroProdutoToolStripMenuItem2.Size = new System.Drawing.Size(229, 26);
+            this.cadastroProdutoToolStripMenuItem2.Size = new System.Drawing.Size(234, 26);
             this.cadastroProdutoToolStripMenuItem2.Text = "Cadastro de Produto";
             this.cadastroProdutoToolStripMenuItem2.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
@@ -91,7 +93,7 @@ namespace RestauranteApp
             this.cadastrosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clienteToolStripMenuItem1});
             this.cadastrosToolStripMenuItem1.Name = "cadastrosToolStripMenuItem1";
-            this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(157, 26);
             this.cadastrosToolStripMenuItem1.Text = "Cadastros";
             // 
             // clienteToolStripMenuItem1
@@ -100,7 +102,7 @@ namespace RestauranteApp
             this.novoClienteToolStripMenuItem,
             this.alterarClienteToolStripMenuItem});
             this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
             this.clienteToolStripMenuItem1.Text = "Cliente";
             // 
             // novoClienteToolStripMenuItem
@@ -114,6 +116,13 @@ namespace RestauranteApp
             this.alterarClienteToolStripMenuItem.Name = "alterarClienteToolStripMenuItem";
             this.alterarClienteToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
             this.alterarClienteToolStripMenuItem.Text = "Alterar Cliente";
+            // 
+            // cadastroRefeicaoToolStripMenuItem
+            // 
+            this.cadastroRefeicaoToolStripMenuItem.Name = "cadastroRefeicaoToolStripMenuItem";
+            this.cadastroRefeicaoToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.cadastroRefeicaoToolStripMenuItem.Text = "Cadastro de Refeição";
+            this.cadastroRefeicaoToolStripMenuItem.Click += new System.EventHandler(this.cadastroRefeicaoToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -145,6 +154,7 @@ namespace RestauranteApp
         private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem novoClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem alterarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroRefeicaoToolStripMenuItem;
     }
 }
 
