@@ -13,8 +13,8 @@ namespace Restaurante.DAO
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "INSERT INTO PEDIDO_REFEICAO(CD_PEDIDO,CD_REFEICAO,QUANTIDADE,PRECO) VALUES(@CD_PEDIDO,@CD_REFEICAO,@QUANTIDADE,@PRECO)";
-            comando.Parameters.AddWithValue("@CD_PEDIDO", pedido_refeicao.Cd_Pedido);
-            comando.Parameters.AddWithValue("@CD_REFEICAO", pedido_refeicao.Cd_Refeicao);
+            comando.Parameters.AddWithValue("@CD_PEDIDO", pedido_refeicao.Fk_Cd_Pedido);
+            comando.Parameters.AddWithValue("@CD_REFEICAO", pedido_refeicao.Fk_Cd_Refeicao);
             comando.Parameters.AddWithValue("@QUANTIDADE", pedido_refeicao.Quantidade);
             comando.Parameters.AddWithValue("@PRECO", pedido_refeicao.Preco);
 
@@ -57,8 +57,8 @@ namespace Restaurante.DAO
             {
                 dr.Read();
                 pedido_refeicao.Cd_Pedido_Refeicao = (int)dr["CD_PEDIDO_REFEICAO"];
-                pedido_refeicao.Cd_Pedido = (int)dr["CD_PEDIDO"];
-                pedido_refeicao.Cd_Refeicao = (int)dr["CD_REFEICAO"];
+                pedido_refeicao.Fk_Cd_Pedido = (int)dr["CD_PEDIDO"];
+                pedido_refeicao.Fk_Cd_Refeicao = (int)dr["CD_REFEICAO"];
                 pedido_refeicao.Quantidade = (int)dr["QUANTIDADE"];
                 pedido_refeicao.Preco = (decimal)dr["PRECO"];
             }
@@ -86,8 +86,8 @@ namespace Restaurante.DAO
                     Pedido_Refeicao pedido_refeicao = new Pedido_Refeicao();
 
                     pedido_refeicao.Cd_Pedido_Refeicao = (int)dr["CD_PEDIDO_REFEICAO"];
-                    pedido_refeicao.Cd_Pedido = (int)dr["CD_PEDIDO"];
-                    pedido_refeicao.Cd_Refeicao = (int)dr["CD_REFEICAO"];
+                    pedido_refeicao.Fk_Cd_Pedido = (int)dr["CD_PEDIDO"];
+                    pedido_refeicao.Fk_Cd_Refeicao = (int)dr["CD_REFEICAO"];
                     pedido_refeicao.Quantidade = (int)dr["QUANTIDADE"];
                     pedido_refeicao.Preco = (decimal)dr["PRECO"];
 

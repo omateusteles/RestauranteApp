@@ -14,7 +14,7 @@ namespace Restaurante.DAO
             comando.CommandType = CommandType.Text;
             //comando.CommandText = "INSERT INTO CONTA(CD_MESA,DATA_HORA_ABERTURA,DATA_HORA_FECHAMETO) VALUES(@CD_MESA,@DATA_HORA_ABERTURA,DATA_HORA_FECHAMETO)";
             comando.CommandText = "INSERT INTO CONTA(CD_MESA) VALUES(@CD_MESA)";
-            comando.Parameters.AddWithValue("@CD_MESA", conta.Cd_Mesa);
+            comando.Parameters.AddWithValue("@CD_MESA", conta.Fk_Cd_Mesa);
             //comando.Parameters.AddWithValue("@DATA_HORA_ABERTURA", conta.Data_Hora_Abertura);
             //comando.Parameters.AddWithValue("@DATA_HORA_FECHAMETO", conta.Data_Hora_Fechamento);
             Conexao_Banco.CRUD(comando);
@@ -35,7 +35,7 @@ namespace Restaurante.DAO
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "UPDATE CONTA SET CD_MESA=@CD_MESA,DATA_HORA_FECHAMETO=DATA_HORA_FECHAMETO WHERE CD_CONTA=@CD_CONTA";
-            comando.Parameters.AddWithValue("@CD_MESA", conta.Cd_Mesa);
+            comando.Parameters.AddWithValue("@CD_MESA", conta.Fk_Cd_Mesa);
             comando.Parameters.AddWithValue("@DATA_HORA_FECHAMETO", conta.Data_Hora_Fechamento);
             comando.Parameters.AddWithValue("@CD_CONTA", conta.Cd_Conta);
 
@@ -55,7 +55,7 @@ namespace Restaurante.DAO
             if (dr.HasRows)
             {
                 dr.Read();
-                conta.Cd_Mesa = (int)dr["CD_MESA"];
+                conta.Fk_Cd_Mesa = (int)dr["CD_MESA"];
                 conta.Cd_Conta = (int)dr["CD_CONTA"];
                 conta.Data_Hora_Fechamento = (DateTime)dr["DATA_HORA_FECHAMETO"];
                 conta.Data_Hora_Abertura = (DateTime)dr["DATA_HORA_ABERTURA"];
@@ -83,7 +83,7 @@ namespace Restaurante.DAO
                 {
                     Conta conta = new Conta();
 
-                    conta.Cd_Mesa = (int)dr["CD_MESA"];
+                    conta.Fk_Cd_Mesa = (int)dr["CD_MESA"];
                     conta.Cd_Conta = (int)dr["CD_CONTA"];
                     conta.Data_Hora_Fechamento = (DateTime)dr["DATA_HORA_FECHAMETO"];
                     conta.Data_Hora_Abertura = (DateTime)dr["DATA_HORA_ABERTURA"];

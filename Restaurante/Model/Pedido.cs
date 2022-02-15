@@ -9,7 +9,7 @@ namespace Restaurante.Model
     public class Pedido
     {
         public int Cd_Pedido { get; set; }
-        public int Cd_Mesa { get; set; }
+        public int Fk_Cd_Mesa { get; set; }
         public DateTime Data_Hora { get; set; }
     }
 }

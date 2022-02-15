@@ -47,13 +47,13 @@ namespace RestauranteApp.View
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.txt_cd_produto = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_remover = new System.Windows.Forms.Button();
             this.CD_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTOQUE_MINIMO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ESTOQUE_ATUAL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECO_CUSTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_remover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,6 +192,26 @@ namespace RestauranteApp.View
             this.dataGridView1.Size = new System.Drawing.Size(752, 214);
             this.dataGridView1.TabIndex = 17;
             // 
+            // btn_editar
+            // 
+            this.btn_editar.Location = new System.Drawing.Point(209, 400);
+            this.btn_editar.Name = "btn_editar";
+            this.btn_editar.Size = new System.Drawing.Size(86, 32);
+            this.btn_editar.TabIndex = 18;
+            this.btn_editar.Text = "Editar";
+            this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
+            // 
+            // btn_remover
+            // 
+            this.btn_remover.Location = new System.Drawing.Point(553, 400);
+            this.btn_remover.Name = "btn_remover";
+            this.btn_remover.Size = new System.Drawing.Size(86, 32);
+            this.btn_remover.TabIndex = 19;
+            this.btn_remover.Text = "Remover";
+            this.btn_remover.UseVisualStyleBackColor = true;
+            this.btn_remover.Click += new System.EventHandler(this.btn_remover_Click);
+            // 
             // CD_PRODUTO
             // 
             this.CD_PRODUTO.DataPropertyName = "CD_PRODUTO";
@@ -201,7 +221,7 @@ namespace RestauranteApp.View
             this.CD_PRODUTO.MinimumWidth = 6;
             this.CD_PRODUTO.Name = "CD_PRODUTO";
             this.CD_PRODUTO.ReadOnly = true;
-            this.CD_PRODUTO.Width = 80;
+            this.CD_PRODUTO.Width = 70;
             // 
             // DESCRICAO
             // 
@@ -247,26 +267,6 @@ namespace RestauranteApp.View
             this.PRECO_CUSTO.Name = "PRECO_CUSTO";
             this.PRECO_CUSTO.ReadOnly = true;
             this.PRECO_CUSTO.Width = 150;
-            // 
-            // btn_editar
-            // 
-            this.btn_editar.Location = new System.Drawing.Point(209, 400);
-            this.btn_editar.Name = "btn_editar";
-            this.btn_editar.Size = new System.Drawing.Size(86, 32);
-            this.btn_editar.TabIndex = 18;
-            this.btn_editar.Text = "Editar";
-            this.btn_editar.UseVisualStyleBackColor = true;
-            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
-            // 
-            // btn_remover
-            // 
-            this.btn_remover.Location = new System.Drawing.Point(553, 400);
-            this.btn_remover.Name = "btn_remover";
-            this.btn_remover.Size = new System.Drawing.Size(86, 32);
-            this.btn_remover.TabIndex = 19;
-            this.btn_remover.Text = "Remover";
-            this.btn_remover.UseVisualStyleBackColor = true;
-            this.btn_remover.Click += new System.EventHandler(this.btn_remover_Click);
             // 
             // ProdutoView
             // 
@@ -321,12 +321,12 @@ namespace RestauranteApp.View
         private System.Windows.Forms.DataGridViewTextBoxColumn eSTOQUEMINIMODataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn eSTOQUEATUALDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_editar;
+        private System.Windows.Forms.Button btn_remover;
         private System.Windows.Forms.DataGridViewTextBoxColumn CD_PRODUTO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_MINIMO;
         private System.Windows.Forms.DataGridViewTextBoxColumn ESTOQUE_ATUAL;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECO_CUSTO;
-        private System.Windows.Forms.Button btn_editar;
-        private System.Windows.Forms.Button btn_remover;
     }
 }

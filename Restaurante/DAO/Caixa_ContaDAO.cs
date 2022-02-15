@@ -13,8 +13,8 @@ namespace Restaurante.DAO
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "INSERT INTO CAIXA_CONTA(CD_CAIXA,CD_CONTA,DESCRICAO_PAGAMENTO,VALOR_PAGAMENTO) VALUES(@CD_CAIXA,@CD_CONTA,@DESCRICAO_PAGAMENTO,@VALOR_PAGAMENTO)";
-            comando.Parameters.AddWithValue("@CD_CAIXA", caixa_conta.Cd_Caixa);
-            comando.Parameters.AddWithValue("@CD_CONTA", caixa_conta.Cd_Conta);
+            comando.Parameters.AddWithValue("@CD_CAIXA", caixa_conta.Fk_Cd_Caixa);
+            comando.Parameters.AddWithValue("@CD_CONTA", caixa_conta.Fk_Cd_Conta);
             comando.Parameters.AddWithValue("@DESCRICAO_PAGAMENTO", caixa_conta.Descricao_Pagamento);
             comando.Parameters.AddWithValue("@VALOR_PAGAMENTO", caixa_conta.Valor_Pagamento);
 
@@ -56,8 +56,8 @@ namespace Restaurante.DAO
             {
                 dr.Read();
                 caixa_conta.Cd_Caixa_Conta = (int)dr["CD_CAIXA_CONTA"];
-                caixa_conta.Cd_Caixa = (int)dr["CD_CAIXA"];
-                caixa_conta.Cd_Conta = (int)dr["CD_CONTA"];
+                caixa_conta.Fk_Cd_Caixa = (int)dr["CD_CAIXA"];
+                caixa_conta.Fk_Cd_Conta = (int)dr["CD_CONTA"];
                 caixa_conta.Valor_Pagamento = (decimal)dr["VALOR_PAGAMENTO"];
                 caixa_conta.Descricao_Pagamento = (string)dr["DESCRICAO_PAGAMENTO"]; 
                 caixa_conta.Data_Hora_Pagamento = (DateTime)dr["DATA_HORA_PAGAMENTO"];
@@ -86,8 +86,8 @@ namespace Restaurante.DAO
                     Caixa_Conta caixa_conta = new Caixa_Conta();
 
                     caixa_conta.Cd_Caixa_Conta = (int)dr["CD_CAIXA_CONTA"];
-                    caixa_conta.Cd_Caixa = (int)dr["CD_CAIXA"];
-                    caixa_conta.Cd_Conta = (int)dr["CD_CONTA"];
+                    caixa_conta.Fk_Cd_Caixa = (int)dr["CD_CAIXA"];
+                    caixa_conta.Fk_Cd_Conta = (int)dr["CD_CONTA"];
                     caixa_conta.Valor_Pagamento = (decimal)dr["VALOR_PAGAMENTO"];
                     caixa_conta.Descricao_Pagamento = (string)dr["DESCRICAO_PAGAMENTO"];
                     caixa_conta.Data_Hora_Pagamento = (DateTime)dr["DATA_HORA_PAGAMENTO"];

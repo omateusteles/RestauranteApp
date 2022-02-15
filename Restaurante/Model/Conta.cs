@@ -9,7 +9,7 @@ namespace Restaurante.Model
     public class Conta
     {
         public int Cd_Conta { get; set; }
-        public int Cd_Mesa { get; set; }
+        public int Fk_Cd_Mesa { get; set; }
         public DateTime Data_Hora_Abertura { get; set; }
         public DateTime? Data_Hora_Fechamento { get; set; }
     }

@@ -73,6 +73,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\Refeicao_ProdutoController.cs" />
     <Compile Include="Controller\RefeicaoController.cs" />
     <Compile Include="Controller\ProdutoController.cs" />
     <Compile Include="DAO\Conexao_Banco.cs" />

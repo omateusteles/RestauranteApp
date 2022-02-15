@@ -47,18 +47,23 @@ namespace RestauranteApp.View
             this.txt_descricao = new System.Windows.Forms.TextBox();
             this.lbl_cd_refeicao = new System.Windows.Forms.Label();
             this.gb_produto_refeicao = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.txt_codigo_produto = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
             this.lbl_quantidade = new System.Windows.Forms.Label();
             this.txt_quantidade = new System.Windows.Forms.TextBox();
-            this.lbl_codigo_produto = new System.Windows.Forms.Label();
-            this.CD_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QUANTIDADE = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_remover_refeicao_produto = new System.Windows.Forms.Button();
+            this.btn_editar_refeicao_produto = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.txt_cd_refeicao_produto = new System.Windows.Forms.TextBox();
+            this.btn_cancelar_refeicao_produto = new System.Windows.Forms.Button();
+            this.btn_salvar_refeicao_produto = new System.Windows.Forms.Button();
+            this.btn_novo_refeicao_produto = new System.Windows.Forms.Button();
+            this.lbl_cd_produto = new System.Windows.Forms.Label();
+            this.txt_cd_produto = new System.Windows.Forms.TextBox();
+            this.lbl_cd_refeicao_produto = new System.Windows.Forms.Label();
+            this.CD_REFEICAO_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descricao_Produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QUANTIDADE_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FK_CD_PRODUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FK_CD_REFEICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CD_REFEICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DESCRICAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PRECO = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -124,6 +129,7 @@ namespace RestauranteApp.View
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(367, 214);
             this.dataGridView1.TabIndex = 33;
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // txt_cd_refeicao
             // 
@@ -210,16 +216,18 @@ namespace RestauranteApp.View
             // 
             // gb_produto_refeicao
             // 
-            this.gb_produto_refeicao.Controls.Add(this.button1);
-            this.gb_produto_refeicao.Controls.Add(this.button2);
-            this.gb_produto_refeicao.Controls.Add(this.dataGridView2);
-            this.gb_produto_refeicao.Controls.Add(this.txt_codigo_produto);
-            this.gb_produto_refeicao.Controls.Add(this.button3);
-            this.gb_produto_refeicao.Controls.Add(this.button4);
-            this.gb_produto_refeicao.Controls.Add(this.button5);
             this.gb_produto_refeicao.Controls.Add(this.lbl_quantidade);
             this.gb_produto_refeicao.Controls.Add(this.txt_quantidade);
-            this.gb_produto_refeicao.Controls.Add(this.lbl_codigo_produto);
+            this.gb_produto_refeicao.Controls.Add(this.btn_remover_refeicao_produto);
+            this.gb_produto_refeicao.Controls.Add(this.btn_editar_refeicao_produto);
+            this.gb_produto_refeicao.Controls.Add(this.dataGridView2);
+            this.gb_produto_refeicao.Controls.Add(this.txt_cd_refeicao_produto);
+            this.gb_produto_refeicao.Controls.Add(this.btn_cancelar_refeicao_produto);
+            this.gb_produto_refeicao.Controls.Add(this.btn_salvar_refeicao_produto);
+            this.gb_produto_refeicao.Controls.Add(this.btn_novo_refeicao_produto);
+            this.gb_produto_refeicao.Controls.Add(this.lbl_cd_produto);
+            this.gb_produto_refeicao.Controls.Add(this.txt_cd_produto);
+            this.gb_produto_refeicao.Controls.Add(this.lbl_cd_refeicao_produto);
             this.gb_produto_refeicao.Location = new System.Drawing.Point(517, 12);
             this.gb_produto_refeicao.Name = "gb_produto_refeicao";
             this.gb_produto_refeicao.Size = new System.Drawing.Size(468, 494);
@@ -227,31 +235,53 @@ namespace RestauranteApp.View
             this.gb_produto_refeicao.TabStop = false;
             this.gb_produto_refeicao.Text = "Produtos da Refeição";
             // 
-            // button1
+            // lbl_quantidade
             // 
-            this.button1.Location = new System.Drawing.Point(332, 373);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 32);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Remover";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lbl_quantidade.AutoSize = true;
+            this.lbl_quantidade.Location = new System.Drawing.Point(69, 85);
+            this.lbl_quantidade.Name = "lbl_quantidade";
+            this.lbl_quantidade.Size = new System.Drawing.Size(85, 16);
+            this.lbl_quantidade.TabIndex = 37;
+            this.lbl_quantidade.Text = "Quantidade*:";
             // 
-            // button2
+            // txt_quantidade
             // 
-            this.button2.Location = new System.Drawing.Point(189, 373);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 32);
-            this.button2.TabIndex = 34;
-            this.button2.Text = "Editar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.txt_quantidade.Location = new System.Drawing.Point(169, 82);
+            this.txt_quantidade.Name = "txt_quantidade";
+            this.txt_quantidade.ReadOnly = true;
+            this.txt_quantidade.Size = new System.Drawing.Size(114, 22);
+            this.txt_quantidade.TabIndex = 36;
+            // 
+            // btn_remover_refeicao_produto
+            // 
+            this.btn_remover_refeicao_produto.Location = new System.Drawing.Point(332, 373);
+            this.btn_remover_refeicao_produto.Name = "btn_remover_refeicao_produto";
+            this.btn_remover_refeicao_produto.Size = new System.Drawing.Size(86, 32);
+            this.btn_remover_refeicao_produto.TabIndex = 35;
+            this.btn_remover_refeicao_produto.Text = "Remover";
+            this.btn_remover_refeicao_produto.UseVisualStyleBackColor = true;
+            this.btn_remover_refeicao_produto.Click += new System.EventHandler(this.btn_remover_refeicao_produto_Click);
+            // 
+            // btn_editar_refeicao_produto
+            // 
+            this.btn_editar_refeicao_produto.Location = new System.Drawing.Point(189, 373);
+            this.btn_editar_refeicao_produto.Name = "btn_editar_refeicao_produto";
+            this.btn_editar_refeicao_produto.Size = new System.Drawing.Size(86, 32);
+            this.btn_editar_refeicao_produto.TabIndex = 34;
+            this.btn_editar_refeicao_produto.Text = "Editar";
+            this.btn_editar_refeicao_produto.UseVisualStyleBackColor = true;
+            this.btn_editar_refeicao_produto.Click += new System.EventHandler(this.btn_editar_refeicao_produto_Click);
             // 
             // dataGridView2
             // 
             this.dataGridView2.AllowUserToDeleteRows = false;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CD_PRODUTO,
-            this.QUANTIDADE});
+            this.CD_REFEICAO_PRODUTO,
+            this.Descricao_Produto,
+            this.QUANTIDADE_PRODUTO,
+            this.FK_CD_PRODUTO,
+            this.FK_CD_REFEICAO});
             this.dataGridView2.Location = new System.Drawing.Point(51, 136);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
@@ -260,90 +290,122 @@ namespace RestauranteApp.View
             this.dataGridView2.Size = new System.Drawing.Size(367, 214);
             this.dataGridView2.TabIndex = 33;
             // 
-            // txt_codigo_produto
+            // txt_cd_refeicao_produto
             // 
-            this.txt_codigo_produto.Location = new System.Drawing.Point(173, 18);
-            this.txt_codigo_produto.Name = "txt_codigo_produto";
-            this.txt_codigo_produto.ReadOnly = true;
-            this.txt_codigo_produto.Size = new System.Drawing.Size(114, 22);
-            this.txt_codigo_produto.TabIndex = 20;
+            this.txt_cd_refeicao_produto.Location = new System.Drawing.Point(169, 18);
+            this.txt_cd_refeicao_produto.Name = "txt_cd_refeicao_produto";
+            this.txt_cd_refeicao_produto.ReadOnly = true;
+            this.txt_cd_refeicao_produto.Size = new System.Drawing.Size(114, 22);
+            this.txt_cd_refeicao_produto.TabIndex = 20;
             // 
-            // button3
+            // btn_cancelar_refeicao_produto
             // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(332, 429);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(86, 32);
-            this.button3.TabIndex = 32;
-            this.button3.Text = "Cancelar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_cancelar_refeicao_produto.Enabled = false;
+            this.btn_cancelar_refeicao_produto.Location = new System.Drawing.Point(332, 429);
+            this.btn_cancelar_refeicao_produto.Name = "btn_cancelar_refeicao_produto";
+            this.btn_cancelar_refeicao_produto.Size = new System.Drawing.Size(86, 32);
+            this.btn_cancelar_refeicao_produto.TabIndex = 32;
+            this.btn_cancelar_refeicao_produto.Text = "Cancelar";
+            this.btn_cancelar_refeicao_produto.UseVisualStyleBackColor = true;
+            this.btn_cancelar_refeicao_produto.Click += new System.EventHandler(this.btn_cancelar_refeicao_produto_Click);
             // 
-            // button4
+            // btn_salvar_refeicao_produto
             // 
-            this.button4.Enabled = false;
-            this.button4.Location = new System.Drawing.Point(51, 438);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(86, 32);
-            this.button4.TabIndex = 31;
-            this.button4.Text = "Salvar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_salvar_refeicao_produto.Enabled = false;
+            this.btn_salvar_refeicao_produto.Location = new System.Drawing.Point(51, 438);
+            this.btn_salvar_refeicao_produto.Name = "btn_salvar_refeicao_produto";
+            this.btn_salvar_refeicao_produto.Size = new System.Drawing.Size(86, 32);
+            this.btn_salvar_refeicao_produto.TabIndex = 31;
+            this.btn_salvar_refeicao_produto.Text = "Salvar";
+            this.btn_salvar_refeicao_produto.UseVisualStyleBackColor = true;
+            this.btn_salvar_refeicao_produto.Click += new System.EventHandler(this.btn_salvar_refeicao_produto_Click);
             // 
-            // button5
+            // btn_novo_refeicao_produto
             // 
-            this.button5.Location = new System.Drawing.Point(51, 373);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(86, 32);
-            this.button5.TabIndex = 30;
-            this.button5.Text = "Novo";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btn_novo_refeicao_produto.Location = new System.Drawing.Point(51, 373);
+            this.btn_novo_refeicao_produto.Name = "btn_novo_refeicao_produto";
+            this.btn_novo_refeicao_produto.Size = new System.Drawing.Size(86, 32);
+            this.btn_novo_refeicao_produto.TabIndex = 30;
+            this.btn_novo_refeicao_produto.Text = "Novo";
+            this.btn_novo_refeicao_produto.UseVisualStyleBackColor = true;
+            this.btn_novo_refeicao_produto.Click += new System.EventHandler(this.btn_novo_refeicao_produto_Click);
             // 
-            // lbl_quantidade
+            // lbl_cd_produto
             // 
-            this.lbl_quantidade.AutoSize = true;
-            this.lbl_quantidade.Location = new System.Drawing.Point(73, 58);
-            this.lbl_quantidade.Name = "lbl_quantidade";
-            this.lbl_quantidade.Size = new System.Drawing.Size(85, 16);
-            this.lbl_quantidade.TabIndex = 28;
-            this.lbl_quantidade.Text = "Quantidade*:";
+            this.lbl_cd_produto.AutoSize = true;
+            this.lbl_cd_produto.Location = new System.Drawing.Point(92, 52);
+            this.lbl_cd_produto.Name = "lbl_cd_produto";
+            this.lbl_cd_produto.Size = new System.Drawing.Size(62, 16);
+            this.lbl_cd_produto.TabIndex = 28;
+            this.lbl_cd_produto.Text = "Produto*:";
             // 
-            // txt_quantidade
+            // txt_cd_produto
             // 
-            this.txt_quantidade.Location = new System.Drawing.Point(173, 52);
-            this.txt_quantidade.Name = "txt_quantidade";
-            this.txt_quantidade.ReadOnly = true;
-            this.txt_quantidade.Size = new System.Drawing.Size(114, 22);
-            this.txt_quantidade.TabIndex = 22;
+            this.txt_cd_produto.Location = new System.Drawing.Point(169, 49);
+            this.txt_cd_produto.Name = "txt_cd_produto";
+            this.txt_cd_produto.ReadOnly = true;
+            this.txt_cd_produto.Size = new System.Drawing.Size(114, 22);
+            this.txt_cd_produto.TabIndex = 22;
             // 
-            // lbl_codigo_produto
+            // lbl_cd_refeicao_produto
             // 
-            this.lbl_codigo_produto.AutoSize = true;
-            this.lbl_codigo_produto.Location = new System.Drawing.Point(99, 21);
-            this.lbl_codigo_produto.Name = "lbl_codigo_produto";
-            this.lbl_codigo_produto.Size = new System.Drawing.Size(59, 16);
-            this.lbl_codigo_produto.TabIndex = 24;
-            this.lbl_codigo_produto.Text = "Código*:";
+            this.lbl_cd_refeicao_produto.AutoSize = true;
+            this.lbl_cd_refeicao_produto.Location = new System.Drawing.Point(95, 21);
+            this.lbl_cd_refeicao_produto.Name = "lbl_cd_refeicao_produto";
+            this.lbl_cd_refeicao_produto.Size = new System.Drawing.Size(59, 16);
+            this.lbl_cd_refeicao_produto.TabIndex = 24;
+            this.lbl_cd_refeicao_produto.Text = "Código*:";
             // 
-            // CD_PRODUTO
+            // CD_REFEICAO_PRODUTO
             // 
-            this.CD_PRODUTO.DataPropertyName = "CD_PRODUTO";
+            this.CD_REFEICAO_PRODUTO.DataPropertyName = "CD_REFEICAO_PRODUTO";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CD_PRODUTO.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CD_PRODUTO.HeaderText = "Código";
-            this.CD_PRODUTO.MinimumWidth = 6;
-            this.CD_PRODUTO.Name = "CD_PRODUTO";
-            this.CD_PRODUTO.ReadOnly = true;
-            this.CD_PRODUTO.Width = 90;
+            this.CD_REFEICAO_PRODUTO.DefaultCellStyle = dataGridViewCellStyle3;
+            this.CD_REFEICAO_PRODUTO.HeaderText = "Código";
+            this.CD_REFEICAO_PRODUTO.MinimumWidth = 6;
+            this.CD_REFEICAO_PRODUTO.Name = "CD_REFEICAO_PRODUTO";
+            this.CD_REFEICAO_PRODUTO.ReadOnly = true;
+            this.CD_REFEICAO_PRODUTO.Width = 60;
             // 
-            // QUANTIDADE
+            // Descricao_Produto
             // 
-            this.QUANTIDADE.DataPropertyName = "QUANTIDADE";
+            this.Descricao_Produto.DataPropertyName = "Descricao_Produto";
+            this.Descricao_Produto.HeaderText = "Produto";
+            this.Descricao_Produto.MinimumWidth = 6;
+            this.Descricao_Produto.Name = "Descricao_Produto";
+            this.Descricao_Produto.ReadOnly = true;
+            this.Descricao_Produto.Width = 80;
+            // 
+            // QUANTIDADE_PRODUTO
+            // 
+            this.QUANTIDADE_PRODUTO.DataPropertyName = "QUANTIDADE_PRODUTO";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.QUANTIDADE.DefaultCellStyle = dataGridViewCellStyle4;
-            this.QUANTIDADE.HeaderText = "Quantidade";
-            this.QUANTIDADE.MinimumWidth = 6;
-            this.QUANTIDADE.Name = "QUANTIDADE";
-            this.QUANTIDADE.ReadOnly = true;
-            this.QUANTIDADE.Width = 90;
+            this.QUANTIDADE_PRODUTO.DefaultCellStyle = dataGridViewCellStyle4;
+            this.QUANTIDADE_PRODUTO.HeaderText = "Quantidade";
+            this.QUANTIDADE_PRODUTO.MinimumWidth = 6;
+            this.QUANTIDADE_PRODUTO.Name = "QUANTIDADE_PRODUTO";
+            this.QUANTIDADE_PRODUTO.ReadOnly = true;
+            this.QUANTIDADE_PRODUTO.Width = 80;
+            // 
+            // FK_CD_PRODUTO
+            // 
+            this.FK_CD_PRODUTO.DataPropertyName = "FK_CD_PRODUTO";
+            this.FK_CD_PRODUTO.HeaderText = "FK_CD_PRODUTO";
+            this.FK_CD_PRODUTO.MinimumWidth = 6;
+            this.FK_CD_PRODUTO.Name = "FK_CD_PRODUTO";
+            this.FK_CD_PRODUTO.ReadOnly = true;
+            this.FK_CD_PRODUTO.Visible = false;
+            this.FK_CD_PRODUTO.Width = 70;
+            // 
+            // FK_CD_REFEICAO
+            // 
+            this.FK_CD_REFEICAO.DataPropertyName = "FK_CD_REFEICAO";
+            this.FK_CD_REFEICAO.HeaderText = "FK_CD_REFEICAO";
+            this.FK_CD_REFEICAO.MinimumWidth = 6;
+            this.FK_CD_REFEICAO.Name = "FK_CD_REFEICAO";
+            this.FK_CD_REFEICAO.ReadOnly = true;
+            this.FK_CD_REFEICAO.Visible = false;
+            this.FK_CD_REFEICAO.Width = 125;
             // 
             // CD_REFEICAO
             // 
@@ -354,7 +416,7 @@ namespace RestauranteApp.View
             this.CD_REFEICAO.MinimumWidth = 6;
             this.CD_REFEICAO.Name = "CD_REFEICAO";
             this.CD_REFEICAO.ReadOnly = true;
-            this.CD_REFEICAO.Width = 70;
+            this.CD_REFEICAO.Width = 60;
             // 
             // DESCRICAO
             // 
@@ -374,7 +436,7 @@ namespace RestauranteApp.View
             this.PRECO.MinimumWidth = 6;
             this.PRECO.Name = "PRECO";
             this.PRECO.ReadOnly = true;
-            this.PRECO.Width = 70;
+            this.PRECO.Width = 50;
             // 
             // RefeicaoView
             // 
@@ -419,18 +481,23 @@ namespace RestauranteApp.View
         private System.Windows.Forms.TextBox txt_descricao;
         private System.Windows.Forms.Label lbl_cd_refeicao;
         private System.Windows.Forms.GroupBox gb_produto_refeicao;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_remover_refeicao_produto;
+        private System.Windows.Forms.Button btn_editar_refeicao_produto;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CD_PRODUTO;
-        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE;
-        private System.Windows.Forms.TextBox txt_codigo_produto;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.TextBox txt_cd_refeicao_produto;
+        private System.Windows.Forms.Button btn_cancelar_refeicao_produto;
+        private System.Windows.Forms.Button btn_salvar_refeicao_produto;
+        private System.Windows.Forms.Button btn_novo_refeicao_produto;
+        private System.Windows.Forms.Label lbl_cd_produto;
+        private System.Windows.Forms.TextBox txt_cd_produto;
+        private System.Windows.Forms.Label lbl_cd_refeicao_produto;
         private System.Windows.Forms.Label lbl_quantidade;
         private System.Windows.Forms.TextBox txt_quantidade;
-        private System.Windows.Forms.Label lbl_codigo_produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CD_REFEICAO_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descricao_Produto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QUANTIDADE_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FK_CD_PRODUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FK_CD_REFEICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn CD_REFEICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn DESCRICAO;
         private System.Windows.Forms.DataGridViewTextBoxColumn PRECO;

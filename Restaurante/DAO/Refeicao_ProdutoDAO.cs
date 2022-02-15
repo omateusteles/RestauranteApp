@@ -12,8 +12,8 @@ namespace Restaurante.DAO
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "INSERT INTO REFEICAO_PRODUTO(CD_REFEICAO,CD_PRODUTO,QUANTIDADE_PRODUTO) VALUES(@CD_REFEICAO,@CD_PRODUTO,@QUANTIDADE_PRODUTO)";
-            comando.Parameters.AddWithValue("@CD_REFEICAO", refeicao_produto.Cd_Refeicao);
-            comando.Parameters.AddWithValue("@CD_PRODUTO", refeicao_produto.Cd_Produto);
+            comando.Parameters.AddWithValue("@CD_REFEICAO", refeicao_produto.Fk_Cd_Refeicao);
+            comando.Parameters.AddWithValue("@CD_PRODUTO", refeicao_produto.Fk_Cd_Produto);
             comando.Parameters.AddWithValue("@QUANTIDADE_PRODUTO", refeicao_produto.Quantidade_Produto);
 
             Conexao_Banco.CRUD(comando);
@@ -34,8 +34,8 @@ namespace Restaurante.DAO
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
             comando.CommandText = "UPDATE REFEICAO_PRODUTO SET CD_REFEICAO=@CD_REFEICAO, CD_PRODUTO=@CD_PRODUTO, QUANTIDADE_PRODUTO=@QUANTIDADE_PRODUTO WHERE CD_REFEICAO_PRODUTO=@CD_REFEICAO_PRODUTO";
-            comando.Parameters.AddWithValue("@CD_REFEICAO", refeicao_produto.Cd_Refeicao);
-            comando.Parameters.AddWithValue("@CD_PRODUTO", refeicao_produto.Cd_Produto);
+            comando.Parameters.AddWithValue("@CD_REFEICAO", refeicao_produto.Fk_Cd_Refeicao);
+            comando.Parameters.AddWithValue("@CD_PRODUTO", refeicao_produto.Fk_Cd_Produto);
             comando.Parameters.AddWithValue("@QUANTIDADE_PRODUTO", refeicao_produto.Quantidade_Produto);
             comando.Parameters.AddWithValue("@CD_REFEICAO_PRODUTO", refeicao_produto.Cd_Refeicao_Produto);
 
@@ -55,8 +55,8 @@ namespace Restaurante.DAO
             if (dr.HasRows)
             {
                 dr.Read();
-                refeicao_produto.Cd_Produto = (int)dr["CD_PRODUTO"];
-                refeicao_produto.Cd_Refeicao = (int)dr["CD_REFEICAO"];
+                refeicao_produto.Fk_Cd_Produto = (int)dr["CD_PRODUTO"];
+                refeicao_produto.Fk_Cd_Refeicao = (int)dr["CD_REFEICAO"];
                 refeicao_produto.Cd_Refeicao_Produto = (int)dr["CD_REFEICAO_PRODUTO"];
                 refeicao_produto.Quantidade_Produto = (int)dr["QUANTIDADE_PRODUTO"];
             }
@@ -66,11 +66,12 @@ namespace Restaurante.DAO
             }
             return refeicao_produto;
         }
-        public IList<Refeicao_Produto> BuscarTodos()
+        public IList<Refeicao_Produto> BuscarTodosPai(int Cd_Refeicao)
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM REFEICAO_PRODUTO";
+            comando.CommandText = "SELECT REFEICAO_PRODUTO.*,PRODUTO.DESCRICAO FROM REFEICAO_PRODUTO INNER JOIN PRODUTO ON PRODUTO.CD_PRODUTO=REFEICAO_PRODUTO.CD_PRODUTO WHERE CD_REFEICAO=@CD_REFEICAO";
+            comando.Parameters.AddWithValue("@CD_REFEICAO", Cd_Refeicao);
 
             SqlDataReader dr = Conexao_Banco.Selecionar(comando);
 
@@ -82,11 +83,11 @@ namespace Restaurante.DAO
                 {
                     Refeicao_Produto refeicao_produto = new Refeicao_Produto();
 
-                    refeicao_produto.Cd_Produto = (int)dr["CD_PRODUTO"];
-                    refeicao_produto.Cd_Refeicao = (int)dr["CD_REFEICAO"];
+                    refeicao_produto.Fk_Cd_Produto = (int)dr["CD_PRODUTO"];
+                    refeicao_produto.Fk_Cd_Refeicao = (int)dr["CD_REFEICAO"];
                     refeicao_produto.Cd_Refeicao_Produto = (int)dr["CD_REFEICAO_PRODUTO"];
                     refeicao_produto.Quantidade_Produto = (int)dr["QUANTIDADE_PRODUTO"];
-
+                    refeicao_produto.Descricao_Produto = (string)dr["DESCRICAO"];
                     refeicao_produtos.Add(refeicao_produto);
                 }
             }

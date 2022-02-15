@@ -14,7 +14,7 @@ namespace Restaurante.DAO
             comando.CommandType = CommandType.Text;
             comando.CommandText = "INSERT INTO PEDIDO(LOCALIZACAO,CD_MESA) VALUES(@LOCALIZACAO,@CD_MESA)";
             comando.Parameters.AddWithValue("@LOCALIZACAO", pedido.Data_Hora);
-            comando.Parameters.AddWithValue("@CD_MESA", pedido.Cd_Mesa);
+            comando.Parameters.AddWithValue("@CD_MESA", pedido.Fk_Cd_Mesa);
 
             Conexao_Banco.CRUD(comando);
         }
@@ -54,7 +54,7 @@ namespace Restaurante.DAO
             {
                 dr.Read();
                 pedido.Cd_Pedido = (int)dr["CD_PEDIDO"];
-                pedido.Cd_Mesa = (int)dr["CD_MESA"];
+                pedido.Fk_Cd_Mesa = (int)dr["CD_MESA"];
                 pedido.Data_Hora = (DateTime)dr["DATA_HORA"];
             }
             else
@@ -81,7 +81,7 @@ namespace Restaurante.DAO
                     Pedido pedido = new Pedido();
 
                     pedido.Cd_Pedido = (int)dr["CD_PEDIDO"];
-                    pedido.Cd_Mesa = (int)dr["CD_MESA"];
+                    pedido.Fk_Cd_Mesa = (int)dr["CD_MESA"];
                     pedido.Data_Hora = (DateTime)dr["DATA_HORA"];
 
                     pedidos.Add(pedido);
