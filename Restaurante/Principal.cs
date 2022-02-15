@@ -48,5 +48,22 @@ namespace RestauranteApp
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void cadastroDeMesaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MesaView frmMesa = new MesaView();
+
+                // adicionando form ao panel
+                frmMesa.TopLevel = false;
+                panel.Controls.Add(frmMesa);
+                frmMesa.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

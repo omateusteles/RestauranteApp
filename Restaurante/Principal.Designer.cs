@@ -33,12 +33,10 @@ namespace RestauranteApp
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastroProdutoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroRefeicaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cadastroDeMesaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.novoClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.alterarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cadastroRefeicaoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +66,8 @@ namespace RestauranteApp
             // 
             this.cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastroProdutoToolStripMenuItem2,
-            this.cadastroRefeicaoToolStripMenuItem});
+            this.cadastroRefeicaoToolStripMenuItem,
+            this.cadastroDeMesaToolStripMenuItem});
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(88, 24);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
@@ -80,6 +79,20 @@ namespace RestauranteApp
             this.cadastroProdutoToolStripMenuItem2.Text = "Cadastro de Produto";
             this.cadastroProdutoToolStripMenuItem2.Click += new System.EventHandler(this.produtoToolStripMenuItem1_Click);
             // 
+            // cadastroRefeicaoToolStripMenuItem
+            // 
+            this.cadastroRefeicaoToolStripMenuItem.Name = "cadastroRefeicaoToolStripMenuItem";
+            this.cadastroRefeicaoToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.cadastroRefeicaoToolStripMenuItem.Text = "Cadastro de Refeição";
+            this.cadastroRefeicaoToolStripMenuItem.Click += new System.EventHandler(this.cadastroRefeicaoToolStripMenuItem_Click);
+            // 
+            // cadastroDeMesaToolStripMenuItem
+            // 
+            this.cadastroDeMesaToolStripMenuItem.Name = "cadastroDeMesaToolStripMenuItem";
+            this.cadastroDeMesaToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
+            this.cadastroDeMesaToolStripMenuItem.Text = "Cadastro de Mesa";
+            this.cadastroDeMesaToolStripMenuItem.Click += new System.EventHandler(this.cadastroDeMesaToolStripMenuItem_Click);
+            // 
             // vendasToolStripMenuItem
             // 
             this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -90,39 +103,9 @@ namespace RestauranteApp
             // 
             // cadastrosToolStripMenuItem1
             // 
-            this.cadastrosToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clienteToolStripMenuItem1});
             this.cadastrosToolStripMenuItem1.Name = "cadastrosToolStripMenuItem1";
-            this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(157, 26);
-            this.cadastrosToolStripMenuItem1.Text = "Cadastros";
-            // 
-            // clienteToolStripMenuItem1
-            // 
-            this.clienteToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.novoClienteToolStripMenuItem,
-            this.alterarClienteToolStripMenuItem});
-            this.clienteToolStripMenuItem1.Name = "clienteToolStripMenuItem1";
-            this.clienteToolStripMenuItem1.Size = new System.Drawing.Size(138, 26);
-            this.clienteToolStripMenuItem1.Text = "Cliente";
-            // 
-            // novoClienteToolStripMenuItem
-            // 
-            this.novoClienteToolStripMenuItem.Name = "novoClienteToolStripMenuItem";
-            this.novoClienteToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
-            this.novoClienteToolStripMenuItem.Text = "Adicionar Cliente";
-            // 
-            // alterarClienteToolStripMenuItem
-            // 
-            this.alterarClienteToolStripMenuItem.Name = "alterarClienteToolStripMenuItem";
-            this.alterarClienteToolStripMenuItem.Size = new System.Drawing.Size(206, 26);
-            this.alterarClienteToolStripMenuItem.Text = "Alterar Cliente";
-            // 
-            // cadastroRefeicaoToolStripMenuItem
-            // 
-            this.cadastroRefeicaoToolStripMenuItem.Name = "cadastroRefeicaoToolStripMenuItem";
-            this.cadastroRefeicaoToolStripMenuItem.Size = new System.Drawing.Size(234, 26);
-            this.cadastroRefeicaoToolStripMenuItem.Text = "Cadastro de Refeição";
-            this.cadastroRefeicaoToolStripMenuItem.Click += new System.EventHandler(this.cadastroRefeicaoToolStripMenuItem_Click);
+            this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.cadastrosToolStripMenuItem1.Text = "Pedidos";
             // 
             // Principal
             // 
@@ -135,7 +118,7 @@ namespace RestauranteApp
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Principal";
             this.ShowIcon = false;
-            this.Text = "ControlUp";
+            this.Text = "Restaurante";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -151,10 +134,8 @@ namespace RestauranteApp
         private System.Windows.Forms.ToolStripMenuItem vendasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroProdutoToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem clienteToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem novoClienteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem alterarClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroRefeicaoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cadastroDeMesaToolStripMenuItem;
     }
 }
 

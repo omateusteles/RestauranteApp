@@ -29,7 +29,6 @@ namespace RestauranteApp.View
             txt_estoque_minimo.ReadOnly = false;
             txt_estoque_atual.ReadOnly = false;
 
-            //txt_cd_produto.Text = "-1";
             txt_descricao.Text = string.Empty;
             txt_preco_custo.Text = string.Empty;
             txt_estoque_minimo.Text = string.Empty;
