@@ -97,7 +97,7 @@ namespace RestauranteApp.View
             RefeicaoDAO refeicaoDAO = new RefeicaoDAO();
 
             Cd_Refeicao = !string.IsNullOrEmpty(dataGridView1.CurrentRow.Cells[0].Value.ToString()) ? Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()) : 0;
-            
+
             try
             {
                 refeicaoController.Remover(Cd_Refeicao);
@@ -113,12 +113,19 @@ namespace RestauranteApp.View
 
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-            Refeicao_ProdutoDAO refeicao_produtoDAO = new Refeicao_ProdutoDAO();
-            int Cd_Refeicao = !string.IsNullOrEmpty(dataGridView1.CurrentRow.Cells[0].Value.ToString()) ? Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()) : 0;
-
-            if (Cd_Refeicao != 0)
+            try
             {
-                dataGridView2.DataSource = refeicao_produtoDAO.BuscarTodosPai(Cd_Refeicao);
+                Refeicao_ProdutoDAO refeicao_produtoDAO = new Refeicao_ProdutoDAO();
+                int Cd_Refeicao = !string.IsNullOrEmpty(dataGridView1.CurrentRow.Cells[0].Value.ToString()) ? Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString()) : 0;
+
+                if (Cd_Refeicao != 0)
+                {
+                    dataGridView2.DataSource = refeicao_produtoDAO.BuscarTodosPai(Cd_Refeicao);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

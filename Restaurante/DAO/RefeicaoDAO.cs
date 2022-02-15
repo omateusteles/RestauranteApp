@@ -53,7 +53,7 @@ namespace Restaurante.DAO
                 dr.Read();
                 refeicao.Cd_Refeicao = (int)dr["CD_REFEICAO"];
                 refeicao.Descricao = (string)dr["DESCRICAO"];
-                refeicao.Preco = (decimal)dr["PRECO_CUSTO"];
+                refeicao.Preco = (decimal)dr["PRECO"];
             }
             else
             {

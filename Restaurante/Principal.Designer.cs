@@ -106,6 +106,7 @@ namespace RestauranteApp
             this.cadastrosToolStripMenuItem1.Name = "cadastrosToolStripMenuItem1";
             this.cadastrosToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
             this.cadastrosToolStripMenuItem1.Text = "Pedidos";
+            this.cadastrosToolStripMenuItem1.Click += new System.EventHandler(this.cadastrosToolStripMenuItem1_Click);
             // 
             // Principal
             // 

@@ -88,5 +88,29 @@ namespace Restaurante.DAO
             }
             return mesas;
         }
+
+        public IList<int> BuscarTodosSomenteID()
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT CD_MESA FROM MESA";
+
+            SqlDataReader dr = Conexao_Banco.Selecionar(comando);
+
+            IList<int> mesas = new List<int>();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    mesas.Add((int)dr["CD_MESA"]);
+                }
+            }
+            else
+            {
+                mesas = null;
+            }
+            return mesas;
+        }
     }
 }

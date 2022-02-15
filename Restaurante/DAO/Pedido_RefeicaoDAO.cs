@@ -73,7 +73,39 @@ namespace Restaurante.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM MESA";
+            comando.CommandText = "SELECT * FROM PEDIDO_REFEICAO";
+
+            SqlDataReader dr = Conexao_Banco.Selecionar(comando);
+
+            IList<Pedido_Refeicao> pedidos_refeicao = new List<Pedido_Refeicao>();
+
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    Pedido_Refeicao pedido_refeicao = new Pedido_Refeicao();
+
+                    pedido_refeicao.Cd_Pedido_Refeicao = (int)dr["CD_PEDIDO_REFEICAO"];
+                    pedido_refeicao.Fk_Cd_Pedido = (int)dr["CD_PEDIDO"];
+                    pedido_refeicao.Fk_Cd_Refeicao = (int)dr["CD_REFEICAO"];
+                    pedido_refeicao.Quantidade = (int)dr["QUANTIDADE"];
+                    pedido_refeicao.Preco = (decimal)dr["PRECO"];
+
+                    pedidos_refeicao.Add(pedido_refeicao);
+                }
+            }
+            else
+            {
+                pedidos_refeicao = null;
+            }
+            return pedidos_refeicao;
+        }
+        public IList<Pedido_Refeicao> BuscarTodosPai(int Cd_Pedido)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM PEDIDO_REFEICAO WHERE CD_PEDIDO=@CD_PEDIDO";
+            comando.Parameters.AddWithValue("@CD_PEDIDO", Cd_Pedido);
 
             SqlDataReader dr = Conexao_Banco.Selecionar(comando);
 
