@@ -99,5 +99,22 @@ namespace RestauranteApp
                 MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void caixaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CaixaView frmCaixa = new CaixaView();
+
+                // adicionando form ao panel
+                frmCaixa.TopLevel = false;
+                panel.Controls.Add(frmCaixa);
+                frmCaixa.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

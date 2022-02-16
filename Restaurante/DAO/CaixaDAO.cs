@@ -14,11 +14,7 @@ namespace Restaurante.DAO
             comando.CommandText = "INSERT INTO CAIXA(VALOR_ATUAL) VALUES(@VALOR_ATUAL)";
             comando.Parameters.AddWithValue("@VALOR_ATUAL", caixa.Valor_Atual);
 
-            // só é possível ter um caixa
-            if (string.IsNullOrEmpty(BuscarPorId(caixa.Cd_Caixa).Cd_Caixa.ToString()))
-            {
-                Conexao_Banco.CRUD(comando);
-            }
+            Conexao_Banco.CRUD(comando);
         }
 
         public void Delete(int Cd_Caixa)
@@ -51,6 +47,29 @@ namespace Restaurante.DAO
             SqlDataReader dr = Conexao_Banco.Selecionar(comando);
 
             Caixa caixa = new Caixa ();
+            if (dr.HasRows)
+            {
+                dr.Read();
+                caixa.Cd_Caixa = (int)dr["CD_CAIXA"];
+                caixa.Valor_Atual = (decimal)dr["VALOR_ATUAL"];
+            }
+            else
+            {
+                caixa = null;
+            }
+            return caixa;
+        }
+
+        public Caixa BuscarPorIdDiferente(int Cd_Caixa)
+        {
+            SqlCommand comando = new SqlCommand();
+            comando.CommandType = CommandType.Text;
+            comando.CommandText = "SELECT * FROM CAIXA WHERE CD_CAIXA<>@CD_CAIXA";
+            comando.Parameters.AddWithValue("@CD_CAIXA", Cd_Caixa);
+
+            SqlDataReader dr = Conexao_Banco.Selecionar(comando);
+
+            Caixa caixa = new Caixa();
             if (dr.HasRows)
             {
                 dr.Read();

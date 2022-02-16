@@ -38,6 +38,7 @@ namespace RestauranteApp
             this.vendasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cadastrosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.contasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -98,7 +99,8 @@ namespace RestauranteApp
             // 
             this.vendasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrosToolStripMenuItem1,
-            this.contasToolStripMenuItem});
+            this.contasToolStripMenuItem,
+            this.caixaToolStripMenuItem});
             this.vendasToolStripMenuItem.Name = "vendasToolStripMenuItem";
             this.vendasToolStripMenuItem.Size = new System.Drawing.Size(70, 24);
             this.vendasToolStripMenuItem.Text = "Vendas";
@@ -116,6 +118,13 @@ namespace RestauranteApp
             this.contasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.contasToolStripMenuItem.Text = "Contas";
             this.contasToolStripMenuItem.Click += new System.EventHandler(this.contasToolStripMenuItem_Click);
+            // 
+            // caixaToolStripMenuItem
+            // 
+            this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
+            this.caixaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.caixaToolStripMenuItem.Text = "Caixa";
+            this.caixaToolStripMenuItem.Click += new System.EventHandler(this.caixaToolStripMenuItem_Click);
             // 
             // Principal
             // 
@@ -147,6 +156,7 @@ namespace RestauranteApp
         private System.Windows.Forms.ToolStripMenuItem cadastroRefeicaoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cadastroDeMesaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem contasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
     }
 }
 

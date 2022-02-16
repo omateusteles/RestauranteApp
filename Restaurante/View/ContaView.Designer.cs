@@ -39,6 +39,10 @@ namespace RestauranteApp.View
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.txt_cd_conta = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CD_CONTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FK_CD_MESA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_HORA_ABERTURA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DATA_HORA_FECHAMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_remover = new System.Windows.Forms.Button();
             this.cb_mesa = new System.Windows.Forms.ComboBox();
@@ -47,10 +51,6 @@ namespace RestauranteApp.View
             this.txt_data_abertura = new System.Windows.Forms.TextBox();
             this.lbl_data_fechamento = new System.Windows.Forms.Label();
             this.txt_data_fechamento = new System.Windows.Forms.TextBox();
-            this.CD_CONTA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FK_CD_MESA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_HORA_ABERTURA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DATA_HORA_FECHAMENTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,6 +119,52 @@ namespace RestauranteApp.View
             this.dataGridView1.RowTemplate.Height = 25;
             this.dataGridView1.Size = new System.Drawing.Size(752, 214);
             this.dataGridView1.TabIndex = 17;
+            // 
+            // CD_CONTA
+            // 
+            this.CD_CONTA.DataPropertyName = "CD_CONTA";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CD_CONTA.DefaultCellStyle = dataGridViewCellStyle1;
+            this.CD_CONTA.HeaderText = "Código";
+            this.CD_CONTA.MinimumWidth = 6;
+            this.CD_CONTA.Name = "CD_CONTA";
+            this.CD_CONTA.ReadOnly = true;
+            this.CD_CONTA.Width = 60;
+            // 
+            // FK_CD_MESA
+            // 
+            this.FK_CD_MESA.DataPropertyName = "FK_CD_MESA";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.FK_CD_MESA.DefaultCellStyle = dataGridViewCellStyle2;
+            this.FK_CD_MESA.HeaderText = "Mesa";
+            this.FK_CD_MESA.MinimumWidth = 6;
+            this.FK_CD_MESA.Name = "FK_CD_MESA";
+            this.FK_CD_MESA.ReadOnly = true;
+            this.FK_CD_MESA.Width = 60;
+            // 
+            // DATA_HORA_ABERTURA
+            // 
+            this.DATA_HORA_ABERTURA.DataPropertyName = "DATA_HORA_ABERTURA";
+            dataGridViewCellStyle3.Format = "G";
+            dataGridViewCellStyle3.NullValue = null;
+            this.DATA_HORA_ABERTURA.DefaultCellStyle = dataGridViewCellStyle3;
+            this.DATA_HORA_ABERTURA.HeaderText = "Data Abertura";
+            this.DATA_HORA_ABERTURA.MinimumWidth = 6;
+            this.DATA_HORA_ABERTURA.Name = "DATA_HORA_ABERTURA";
+            this.DATA_HORA_ABERTURA.ReadOnly = true;
+            this.DATA_HORA_ABERTURA.Width = 125;
+            // 
+            // DATA_HORA_FECHAMENTO
+            // 
+            this.DATA_HORA_FECHAMENTO.DataPropertyName = "DATA_HORA_FECHAMENTO";
+            dataGridViewCellStyle4.Format = "G";
+            dataGridViewCellStyle4.NullValue = null;
+            this.DATA_HORA_FECHAMENTO.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DATA_HORA_FECHAMENTO.HeaderText = "Data Fechamento";
+            this.DATA_HORA_FECHAMENTO.MinimumWidth = 6;
+            this.DATA_HORA_FECHAMENTO.Name = "DATA_HORA_FECHAMENTO";
+            this.DATA_HORA_FECHAMENTO.ReadOnly = true;
+            this.DATA_HORA_FECHAMENTO.Width = 150;
             // 
             // btn_editar
             // 
@@ -192,52 +238,6 @@ namespace RestauranteApp.View
             this.txt_data_fechamento.Size = new System.Drawing.Size(120, 22);
             this.txt_data_fechamento.TabIndex = 31;
             // 
-            // CD_CONTA
-            // 
-            this.CD_CONTA.DataPropertyName = "CD_CONTA";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CD_CONTA.DefaultCellStyle = dataGridViewCellStyle1;
-            this.CD_CONTA.HeaderText = "Código";
-            this.CD_CONTA.MinimumWidth = 6;
-            this.CD_CONTA.Name = "CD_CONTA";
-            this.CD_CONTA.ReadOnly = true;
-            this.CD_CONTA.Width = 60;
-            // 
-            // FK_CD_MESA
-            // 
-            this.FK_CD_MESA.DataPropertyName = "FK_CD_MESA";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.FK_CD_MESA.DefaultCellStyle = dataGridViewCellStyle2;
-            this.FK_CD_MESA.HeaderText = "Mesa";
-            this.FK_CD_MESA.MinimumWidth = 6;
-            this.FK_CD_MESA.Name = "FK_CD_MESA";
-            this.FK_CD_MESA.ReadOnly = true;
-            this.FK_CD_MESA.Width = 60;
-            // 
-            // DATA_HORA_ABERTURA
-            // 
-            this.DATA_HORA_ABERTURA.DataPropertyName = "DATA_HORA_ABERTURA";
-            dataGridViewCellStyle3.Format = "G";
-            dataGridViewCellStyle3.NullValue = null;
-            this.DATA_HORA_ABERTURA.DefaultCellStyle = dataGridViewCellStyle3;
-            this.DATA_HORA_ABERTURA.HeaderText = "Data Abertura";
-            this.DATA_HORA_ABERTURA.MinimumWidth = 6;
-            this.DATA_HORA_ABERTURA.Name = "DATA_HORA_ABERTURA";
-            this.DATA_HORA_ABERTURA.ReadOnly = true;
-            this.DATA_HORA_ABERTURA.Width = 125;
-            // 
-            // DATA_HORA_FECHAMENTO
-            // 
-            this.DATA_HORA_FECHAMENTO.DataPropertyName = "DATA_HORA_FECHAMENTO";
-            dataGridViewCellStyle4.Format = "G";
-            dataGridViewCellStyle4.NullValue = null;
-            this.DATA_HORA_FECHAMENTO.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DATA_HORA_FECHAMENTO.HeaderText = "Data Fechamento";
-            this.DATA_HORA_FECHAMENTO.MinimumWidth = 6;
-            this.DATA_HORA_FECHAMENTO.Name = "DATA_HORA_FECHAMENTO";
-            this.DATA_HORA_FECHAMENTO.ReadOnly = true;
-            this.DATA_HORA_FECHAMENTO.Width = 150;
-            // 
             // ContaView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -262,7 +262,7 @@ namespace RestauranteApp.View
             this.Name = "ContaView";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Mesa";
+            this.Text = "Conta";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -29,7 +29,7 @@ namespace Restaurante.Controller
                 throw new Exception("A Quantidade precisa estar preenchida");
             
             if (pedido_refeicao.Preco <= 0)
-                throw new Exception("P Preço precisa estar preenchido");
+                throw new Exception("O Preço precisa estar preenchido");
 
             // se o registro já existir irá atualizar, se não existir irá inserir
             if (pedido_refeicao.Cd_Pedido_Refeicao != 0)
@@ -41,6 +41,7 @@ namespace Restaurante.Controller
                 pedido_refeicaoDAO.Insert(pedido_refeicao);
             }
         }
+
         public void Remover(int Cd_Pedido_Refeicao)
         {
             Pedido_RefeicaoDAO pedido_refeicaoDAO = new Pedido_RefeicaoDAO();

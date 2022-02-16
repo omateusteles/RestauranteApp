@@ -70,7 +70,7 @@ namespace Restaurante.DAO
         {
             SqlCommand comando = new SqlCommand();
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT REFEICAO_PRODUTO.*,PRODUTO.DESCRICAO FROM REFEICAO_PRODUTO INNER JOIN PRODUTO ON PRODUTO.CD_PRODUTO=REFEICAO_PRODUTO.CD_PRODUTO WHERE CD_REFEICAO=@CD_REFEICAO";
+            comando.CommandText = "SELECT * FROM BUSCA_PRODUTOS_REFEICAO WHERE CD_REFEICAO=@CD_REFEICAO";
             comando.Parameters.AddWithValue("@CD_REFEICAO", Cd_Refeicao);
 
             SqlDataReader dr = Conexao_Banco.Selecionar(comando);

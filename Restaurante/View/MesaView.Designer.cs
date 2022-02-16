@@ -29,7 +29,7 @@ namespace RestauranteApp.View
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_cd_mesa = new System.Windows.Forms.Label();
             this.lbl_localizacao = new System.Windows.Forms.Label();
             this.txt_localizacao = new System.Windows.Forms.TextBox();
@@ -38,10 +38,10 @@ namespace RestauranteApp.View
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.txt_cd_mesa = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btn_editar = new System.Windows.Forms.Button();
-            this.btn_remover = new System.Windows.Forms.Button();
             this.CD_MESA = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LOCALIZACAO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_editar = new System.Windows.Forms.Button();
+            this.btn_remover = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -126,6 +126,26 @@ namespace RestauranteApp.View
             this.dataGridView1.Size = new System.Drawing.Size(752, 214);
             this.dataGridView1.TabIndex = 17;
             // 
+            // CD_MESA
+            // 
+            this.CD_MESA.DataPropertyName = "CD_MESA";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.CD_MESA.DefaultCellStyle = dataGridViewCellStyle1;
+            this.CD_MESA.HeaderText = "Código";
+            this.CD_MESA.MinimumWidth = 6;
+            this.CD_MESA.Name = "CD_MESA";
+            this.CD_MESA.ReadOnly = true;
+            this.CD_MESA.Width = 70;
+            // 
+            // LOCALIZACAO
+            // 
+            this.LOCALIZACAO.DataPropertyName = "LOCALIZACAO";
+            this.LOCALIZACAO.HeaderText = "Localização";
+            this.LOCALIZACAO.MinimumWidth = 6;
+            this.LOCALIZACAO.Name = "LOCALIZACAO";
+            this.LOCALIZACAO.ReadOnly = true;
+            this.LOCALIZACAO.Width = 125;
+            // 
             // btn_editar
             // 
             this.btn_editar.Location = new System.Drawing.Point(209, 400);
@@ -145,26 +165,6 @@ namespace RestauranteApp.View
             this.btn_remover.Text = "Remover";
             this.btn_remover.UseVisualStyleBackColor = true;
             this.btn_remover.Click += new System.EventHandler(this.btn_remover_Click);
-            // 
-            // CD_MESA
-            // 
-            this.CD_MESA.DataPropertyName = "CD_MESA";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            this.CD_MESA.DefaultCellStyle = dataGridViewCellStyle3;
-            this.CD_MESA.HeaderText = "Código";
-            this.CD_MESA.MinimumWidth = 6;
-            this.CD_MESA.Name = "CD_MESA";
-            this.CD_MESA.ReadOnly = true;
-            this.CD_MESA.Width = 70;
-            // 
-            // LOCALIZACAO
-            // 
-            this.LOCALIZACAO.DataPropertyName = "LOCALIZACAO";
-            this.LOCALIZACAO.HeaderText = "Localização";
-            this.LOCALIZACAO.MinimumWidth = 6;
-            this.LOCALIZACAO.Name = "LOCALIZACAO";
-            this.LOCALIZACAO.ReadOnly = true;
-            this.LOCALIZACAO.Width = 125;
             // 
             // MesaView
             // 

@@ -21,7 +21,7 @@ namespace Restaurante.Controller
                 throw new Exception("Já existe uma conta em aberto para essa mesa");
 
             if (conta.Data_Hora_Fechamento != null)
-                throw new Exception("N´~ao é possível excluir uma conta já paga");
+                throw new Exception("Não é possível excluir uma conta já paga");
 
             // se o registro já existir irá atualizar, se não existir irá inserir
             if (conta.Cd_Conta != 0)
