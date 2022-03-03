@@ -101,7 +101,14 @@ namespace RestauranteApp.View
             txt_cd_conta.Text = dataGridView1.CurrentRow.Cells[0].Value.ToString();
             cb_mesa.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
             txt_data_abertura.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
-            txt_data_fechamento.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            try
+            {
+                txt_data_fechamento.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                txt_data_fechamento.Text = "";
+            }
         }
 
         private void btn_remover_Click(object sender, EventArgs e)
